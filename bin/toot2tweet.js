@@ -188,7 +188,7 @@ streamUser.on('message', (msg) => {
 
             FS.writeFile('./tmp/moyasearch_query.txt', query, 'utf8', (err) => {
                 if (!err) {
-                    ChildProcess.exec('./bin/moyasearch.pl "' + query + '"', (error, stdout, stderr) => {
+                    ChildProcess.exec('./bin/moyasearch.pl', (error, stdout, stderr) => {
                         if (error) {
                             console.log(error);
                         } else {
